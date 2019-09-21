@@ -20,7 +20,7 @@ const filterLink = (current, item, setFilter) => {
 const Footer = ({ filter, setFilter }) => (
   <div>
     {
-      ['All', 'Active', 'Completed'].map( f => filterLink(filter, f, setFilter))
+      ['All', 'Active', 'In Cart'].map( f => filterLink(filter, f, setFilter))
     }
   </div>
 )

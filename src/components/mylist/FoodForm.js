@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
 
 class FoodForm extends Component {
-  state = { item: '' }
+  state = { item: '', price: '' }
 
   handleChange = (e) => {
-    const { item, value } = e.target
-    this.setState({ [item]: value })
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.addFoodList(this.state.item)
-    this.setState({ item: '' })
+    this.props.addFoodList(this.state)
+    this.setState({ item: '', price: '' })
   }
 
   render() {
-    const { item } = this.state
+    const { item, price } = this.state
     return (
       <form onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange}
           required
           placeholder='add a food item'
-          item='item'
+          name='item'
           value={item}
         />
+        <input 
+          onChange={this.handleChange}
+          required
+          placeholder='food price'
+          name='price'
+          value={price}
+        />
+        <input type="submit"/>
       </form>
     )
   }

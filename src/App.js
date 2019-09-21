@@ -27,10 +27,11 @@ getUniqId = () => {
     .substring(1);
  }
 
- addFoodList = (item) => {
+ addFoodList = (incomingItem) => {
+  const { item, price} = incomingItem
   const { foodLists } = this.state
                   // name: name
-  const foodList = { item, inCart: false, id: this.getUniqId() }
+  const foodList = { item, price, inCart: false, id: this.getUniqId() }
   this.setState({ foodLists: [foodList, ...foodLists] })
 }
 

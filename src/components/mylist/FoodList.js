@@ -4,7 +4,7 @@ const styles = {
   foodList: {
     cursor: 'pointer',
   },
-  complete: {
+  inCart: {
     color: 'grey',
     textDecoration: 'line-through',
   }
