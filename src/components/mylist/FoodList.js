@@ -3,9 +3,10 @@ import React from 'react';
 const styles = {
   foodList: {
     cursor: 'pointer',
+    
   },
   inCart: {
-    color: 'grey',
+    color: 'red',
     textDecoration: 'line-through',
   }
 }

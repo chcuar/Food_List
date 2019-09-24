@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from './components/mylist/List';
 import FoodForm from './components/mylist/FoodForm';
 import Footer from './components/mylist/Footer';
+import { Container, Header, Image } from 'semantic-ui-react';
 
 class App extends Component {
   state = {
@@ -65,11 +66,19 @@ visibleThings = () => {
   render() {
     const { foodLists, filter } = this.state
     return (
-      <div>
+      <Container>
         <FoodForm addFoodList={this.addFoodList} />
-        <List name= "Grocery List" things={this.visibleThings()} foodListClick={this.handleClick} />
+        <Header as='h2' attached='top' color="green">Grocery List</Header>
+        <List things={this.visibleThings()} foodListClick={this.handleClick} />
+        
+        <Image.Group size='small'>
+          <Image src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+          <Image src="https://images.unsplash.com/photo-1556742212-5b321f3c261b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+          <Image src="https://images.unsplash.com/photo-1506617420156-8e4536971650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+          <Image src="https://images.unsplash.com/photo-1556741533-f6acd6474059?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+        </Image.Group>
         <Footer filter={filter} setFilter={this.setFilter} />
-      </div>
+      </Container>
     );
   }
 
