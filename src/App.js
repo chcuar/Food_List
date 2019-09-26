@@ -16,6 +16,14 @@ class App extends Component {
     filter: 'All'
   }
 
+  removeFoodList = (id) => {
+    const foodLists = this.state.foodLists.filter( foodList => {
+      if ( foodList.id !== id )
+        return foodList 
+    })
+    this.setState({ foodLists: [ ...foodLists ]})
+  }
+
   setFilter = (filter) => {
     // filter: filter
 this.setState({ filter })
@@ -69,7 +77,7 @@ visibleThings = () => {
       <Container>
         <FoodForm addFoodList={this.addFoodList} />
         <Header as='h2' attached='top' color="green">Grocery List</Header>
-        <List things={this.visibleThings()} foodListClick={this.handleClick} />
+        <List things={this.visibleThings()} foodListClick={this.handleClick} remove={this.removeFoodList} />
         
         <Image.Group size='small'>
           <Image src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
