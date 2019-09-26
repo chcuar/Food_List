@@ -74,10 +74,14 @@ visibleThings = () => {
   render() {
     const { foodLists, filter } = this.state
     return (
-      <Container>
+      <Container >
         <FoodForm addFoodList={this.addFoodList} />
         <Header as='h2' attached='top' color="green">Grocery List</Header>
-        <List things={this.visibleThings()} foodListClick={this.handleClick} remove={this.removeFoodList} />
+        <List 
+        things={this.visibleThings()} 
+        foodListClick={this.handleClick} 
+        remove={this.removeFoodList} 
+        />
         
         <Image.Group size='small'>
           <Image src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
