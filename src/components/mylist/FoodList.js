@@ -19,15 +19,13 @@ const FoodList = ({ id, item, price, inCart, foodListClick, remove }) => (
     onClick={ () => foodListClick(id) }
   >
     { item }: ${ price }
-
-    <Icon 
+  </li>  
+  <Icon 
       name='delete' 
       size='small' 
       color='red' 
       onClick={() => remove(id)}
     />
-  </li>  
-
   </Container>
   
 )
